@@ -49,20 +49,22 @@ public class HW06 {
                 guessO++;//keep track of odd numbers
                 guessE++;// keep track of even numbers
                 System.out.println("You got it right in " + guessC + " guesses!");
-            } else if (guess != roll) {
+                } else if (guess != roll) {
                 System.out.println("You lost!!!");
 
+                 
                 // Print game stats              
                 int guessG = (int) guessC - guessW;
                 System.out.println("Bad guesses " + guessG);
                 System.out.println("Good guesses " + guessW);
-
+                guessE = guessC - guessO;
+               
+                System.out.println("You got " + guessO + " odd numbers!");
+                System.out.println("You got " + guessE + " Even numbers!");
                 // calculate percentage overall
-                if (guessW != 0) {
-                    percent = (int) (guessW / guessG * 100);
-                }
-                {
-                    System.out.println("Percent of good guesses " + percent + "%");
+                 if (guessW != 0) {
+                    percent = (int) (float) (100/guessC   * guessW);               
+                    System.out.println("Percent of winning guesses " + percent + "%");
                 }
 
             }//if else
